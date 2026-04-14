@@ -1,0 +1,481 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Tegris - Vietmedical</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <style>
+        .glass-header {
+            background: rgba(248, 249, 250, 0.8);
+            backdrop-filter: blur(12px);
+        }
+
+        body {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+    </style>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#181c1c",
+                        "primary-fixed": "#9ff2db",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#3e4945",
+                        "on-tertiary-fixed": "#001356",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-fixed-dim": "#83d6c0",
+                        "surface-dim": "#d9dadb",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f8f9fa",
+                        "on-secondary-fixed-variant": "#434847",
+                        "on-primary-fixed-variant": "#005142",
+                        "surface": "#f8f9fa",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed": "#dde1ff",
+                        "secondary-fixed-dim": "#c3c7c6",
+                        "tertiary": "#0035bf",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#bec9c4",
+                        "tertiary-container": "#124af0",
+                        "inverse-primary": "#83d6c0",
+                        "secondary-fixed": "#dfe3e2",
+                        "on-primary-container": "#95e8d1",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "secondary": "#5b5f5f",
+                        "background": "#f8f9fa",
+                        "primary-container": "#036b59",
+                        "on-surface": "#191c1d",
+                        "on-tertiary-container": "#d1d7ff",
+                        "surface-container": "#edeeef",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#2e3132",
+                        "on-primary-fixed": "#002019",
+                        "on-tertiary-fixed-variant": "#0035be",
+                        "on-secondary-container": "#5f6363",
+                        "tertiary-fixed-dim": "#b8c3ff",
+                        "outline": "#6e7975",
+                        "primary": "#005143"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+                        "body": ["Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"],
+                        "label": ["Segoe UI", "Roboto", "Helvetica", "Arial", "sans-serif"]
+                    }
+                },
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-surface text-on-surface">
+    <!-- TopNavBar -->
+    <nav class="fixed top-0 w-full z-50 bg-slate-50/80 backdrop-blur-md">
+        <div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+            <div class="text-2xl font-extrabold text-emerald-900 tracking-tighter" style="">Tegris | Vietmedical</div>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a class="font-sans font-semibold tracking-tight text-emerald-700 border-b-2 border-emerald-700 pb-1"
+                    href="#" style="">Platform</a>
+                <a class="font-sans font-semibold tracking-tight text-slate-600 hover:text-emerald-900 transition-opacity duration-300"
+                    href="#" style="">Precision Care</a>
+                <a class="font-sans font-semibold tracking-tight text-slate-600 hover:text-emerald-900 transition-opacity duration-300"
+                    href="#" style="">Editorial</a>
+                <a class="font-sans font-semibold tracking-tight text-slate-600 hover:text-emerald-900 transition-opacity duration-300"
+                    href="#" style="">Resources</a>
+            </div>
+            <button
+                class="bg-gradient-to-r from-primary to-primary-container text-on-primary px-6 py-2.5 rounded-lg font-semibold hover:opacity-90 scale-95 active:scale-90 transition-transform"
+                style="">Đăng ký tư vấn</button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden bg-slate-900">
+        <div class="absolute inset-0 z-0">
+            <img class="w-full h-full object-cover opacity-40"
+                data-alt="High-tech surgical suite with advanced monitors showing medical imaging and digital interfaces in a cool-toned sterile environment"
+                src="assets/images/hero-operating-suite.jpg"
+                style="">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+            <div class="max-w-4xl">
+                <span
+                    class="inline-block px-4 py-1.5 mb-6 text-sm font-bold tracking-widest uppercase bg-primary-container/30 text-primary-fixed border border-primary-fixed/20 rounded-full"
+                    style="">Phòng mổ thông minh thế hệ mới</span>
+                <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tighter" style="">
+                    Chuẩn hóa quy trình và <br>tập trung dữ liệu với 1 chạm</h1>
+                <p class="text-xl md:text-2xl text-slate-300 mb-10 max-w-2xl leading-relaxed" style="">
+                    Tegris hợp nhất dữ liệu, giao tiếp, hình ảnh ngoại khoa và điều khiển tích hợp thiết bị trong một
+                    giao diện, giúp chuẩn hoá workflow và giảm thao tác rời rạc.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <button
+                        class="bg-primary text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-primary-container transition-colors shadow-2xl"
+                        style="">
+                        Đăng ký tư vấn</button>
+                    <button
+                        class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-bold text-lg hover:bg-white/20 transition-colors"
+                        style="">
+                        Khảo sát hạ tầng</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Problem Section (Checklist Style) -->
+    <section class="py-24 bg-surface-container-low">
+        <div class="max-w-7xl mx-auto px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl font-extrabold text-primary mb-6 tracking-tight" style="">Rào cản trong vận hành
+                        phòng mổ hiện đại</h2>
+                    <p class="text-lg text-secondary mb-12" style="">Các bệnh viện đang đối mặt với sự rời rạc của thiết
+                        bị và dữ liệu, dẫn đến rủi ro trong an toàn người bệnh.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-2xl shadow-sm">
+                            <span class="material-symbols-outlined text-error text-3xl" style="">⚠</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg" style="">Độ phức tạp của phòng mổ (OR
+                                    Complexity)</h4>
+                                <p class="text-secondary" style="">Quá nhiều màn hình và giao diện điều khiển độc lập
+                                    gây nhầm lẫn.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-2xl shadow-sm">
+                            <span class="material-symbols-outlined text-error text-3xl" style="">📝</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg" style="">Gánh nặng dữ liệu thủ công</h4>
+                                <p class="text-secondary" style="">Ghi chép và lưu trữ hình ảnh tốn nhiều thời gian, dễ
+                                    sai sót.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 p-6 bg-surface-container-lowest rounded-2xl shadow-sm">
+                            <span class="material-symbols-outlined text-error text-3xl" style="">📷</span>
+                            <div>
+                                <h4 class="font-bold text-on-surface text-lg" style="">Nhu cầu hình ảnh thời gian thực
+                                </h4>
+                                <p class="text-secondary" style="">Khó khăn trong việc truyền tải hình ảnh chất lượng
+                                    cao để hội chẩn tức thì.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative rounded-3xl overflow-hidden aspect-square">
+                    <img class="w-full h-full object-cover"
+                        data-alt="Fragmented medical equipment wires and multiple clashing monitors in a dark operating room before integration"
+                        src="assets/images/problem-fragmented-or.jpg"
+                        style="">
+                    <div class="absolute inset-0 bg-primary/20 mix-blend-overlay"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Solution Section (4 Pillars) -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-8 text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-on-surface mb-4" style="">&nbsp;4 giải pháp cốt lõi của Tegris</h2>
+            <div class="h-1.5 w-24 bg-primary mx-auto rounded-full"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Pillar 1 -->
+            <div
+                class="p-8 bg-surface-container-lowest rounded-3xl border-b-4 border-primary shadow-sm hover:shadow-xl transition-shadow">
+                <span class="material-symbols-outlined text-5xl text-primary mb-6" data-weight="fill"
+                    style="">⚙</span>
+                <h3 class="text-2xl font-bold mb-4" style="">Định tuyến</h3>
+                <p class="text-secondary leading-relaxed" style="">Định tuyến tín hiệu video 4K không độ trễ đến bất kỳ
+                    màn hình nào trong phòng mổ.</p>
+            </div>
+            <!-- Pillar 2 -->
+            <div
+                class="p-8 bg-surface-container-lowest rounded-3xl border-b-4 border-primary shadow-sm hover:shadow-xl transition-shadow">
+                <span class="material-symbols-outlined text-5xl text-primary mb-6" data-weight="fill"
+                    style="">📄</span>
+                <h3 class="text-2xl font-bold mb-4" style="">Tài liệu số</h3>
+                <p class="text-secondary leading-relaxed" style="">Ghi nhận dữ liệu, hình ảnh và video phẫu thuật trực
+                    tiếp vào hồ sơ bệnh án điện tử.</p>
+            </div>
+            <!-- Pillar 3 -->
+            <div
+                class="p-8 bg-surface-container-lowest rounded-3xl border-b-4 border-primary shadow-sm hover:shadow-xl transition-shadow">
+                <span class="material-symbols-outlined text-5xl text-primary mb-6" data-weight="fill"
+                    style="">🔗</span>
+                <h3 class="text-2xl font-bold mb-4" style="">Giao tiếp từ xa</h3>
+                <p class="text-secondary leading-relaxed" style="">Hội chẩn từ xa thời gian thực với âm thanh và hình
+                    ảnh chất lượng cao.</p>
+            </div>
+            <!-- Pillar 4 -->
+            <div
+                class="p-8 bg-surface-container-lowest rounded-3xl border-b-4 border-primary shadow-sm hover:shadow-xl transition-shadow">
+                <span class="material-symbols-outlined text-5xl text-primary mb-6" data-weight="fill"
+                    style="">🎛</span>
+                <h3 class="text-2xl font-bold mb-4" style="">Tích hợp</h3>
+                <p class="text-secondary leading-relaxed" style="">Điều khiển ánh sáng, bàn mổ và các thiết bị ngoại vi
+                    từ một màn hình trung tâm.</p>
+            </div>
+        </div>
+    </section>
+    <!-- Integration Section -->
+    <section class="py-24 bg-primary-container text-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+                <h2 class="text-4xl font-extrabold mb-8 leading-tight" style="">Tự do lựa chọn, Tương thích tuyệt đối
+                </h2>
+                <p class="text-xl text-primary-fixed mb-12" style="">Tegris không giới hạn phần cứng. Chúng tôi tuân thủ
+                    nghiêm ngặt các tiêu chuẩn y tế quốc tế để đảm bảo hệ thống luôn sẵn sàng mở rộng.</p>
+                <div class="grid grid-cols-2 gap-8">
+                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20">
+                        <div class="text-3xl font-black mb-2" style="">HL7 / DICOM</div>
+                        <p class="text-sm opacity-80" style="">Tiêu chuẩn truyền tải dữ liệu y tế toàn cầu.</p>
+                    </div>
+                    <div class="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20">
+                        <div class="text-3xl font-black mb-2" style="">Vendor Neutral</div>
+                        <p class="text-sm opacity-80" style="">Tích hợp với mọi hãng thiết bị phẫu thuật.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:w-1/2 relative">
+                <img class="rounded-3xl shadow-2xl scale-110"
+                    data-alt="Abstract visualization of digital data nodes connecting seamlessly with medical symbols in a 3D space"
+                    src="assets/images/integration-data-nodes.jpg"
+                    style="">
+            </div>
+        </div>
+    </section>
+    <!-- Use Cases (Vietnam Specific) -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-7xl mx-auto px-8">
+            <h2 class="text-4xl font-extrabold text-on-surface mb-16 text-center" style="">Ứng dụng tại Việt Nam</h2>
+            <div class="grid lg:grid-cols-3 gap-10">
+                <div class="group relative rounded-3xl overflow-hidden bg-surface-container-high h-[450px]">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Modern hybrid operating room with large imaging systems and surgical robots in a clean environment"
+                        src="assets/images/usecase-hybrid-or.jpg"
+                        style="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2" style="">Hybrid OR</h3>
+                        <p class="text-primary-fixed-dim" style="">Kết hợp chẩn đoán hình ảnh và phẫu thuật can thiệp
+                            tối thiểu trong cùng một phòng.</p>
+                    </div>
+                </div>
+                <div class="group relative rounded-3xl overflow-hidden bg-surface-container-high h-[450px]">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Advanced robotic surgery console with a surgeon operating precisely using digital interfaces"
+                        src="assets/images/usecase-robotic-or.jpg"
+                        style="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2" style="">Smart / Robotic OR</h3>
+                        <p class="text-primary-fixed-dim" style="">Nâng cao độ chính xác với việc tích hợp dữ liệu robot
+                            phẫu thuật vào luồng công việc tập trung.</p>
+                    </div>
+                </div>
+                <div class="group relative rounded-3xl overflow-hidden bg-surface-container-high h-[450px]">
+                    <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        data-alt="Doctors collaborating via high-definition video screen for remote consultation across different locations"
+                        src="assets/images/usecase-telemedicine.jpg"
+                        style="">
+                    <div class="absolute inset-0 bg-gradient-to-t from-primary/90 to-transparent"></div>
+                    <div class="absolute bottom-0 p-8">
+                        <h3 class="text-2xl font-bold text-white mb-2" style="">Tele-medicine</h3>
+                        <p class="text-primary-fixed-dim" style="">Xoá bỏ ranh giới địa lý, đào tạo và hội chẩn quốc tế
+                            ngay tại phòng mổ.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Data Privacy & Compliance (Vietnam 2026) -->
+    <section class="py-20 bg-surface-container-lowest border-l-[12px] border-tertiary mx-8 rounded-2xl shadow-sm">
+        <div class="max-w-5xl mx-auto px-12">
+            <div class="flex items-center gap-4 mb-6">
+                <span class="material-symbols-outlined text-tertiary text-4xl" style="">⚖</span>
+                <h2 class="text-3xl font-extrabold text-on-surface" style="">Tuân thủ &amp; Bảo mật Dữ liệu</h2>
+            </div>
+            <p class="text-lg text-secondary mb-8 leading-relaxed" style="">Tegris cam kết đáp ứng lộ trình số hoá y tế
+                của Việt Nam, đảm bảo mọi dữ liệu hình ảnh và hồ sơ phẫu thuật được quản lý theo đúng quy định pháp luật
+                hiện hành và tương lai.</p>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="p-4 bg-surface-container border border-outline-variant/20 rounded-xl">
+                    <div class="font-bold text-tertiary mb-1" style="">Luật 91/2025/QH15</div>
+                    <p class="text-xs text-secondary" style="">Quy định về khám bệnh, chữa bệnh số.</p>
+                </div>
+                <div class="p-4 bg-surface-container border border-outline-variant/20 rounded-xl">
+                    <div class="font-bold text-tertiary mb-1" style="">Nghị định 356/2025/NĐ-CP</div>
+                    <p class="text-xs text-secondary" style="">Tiêu chuẩn hạ tầng số y tế.</p>
+                </div>
+                <div class="p-4 bg-surface-container border border-outline-variant/20 rounded-xl">
+                    <div class="font-bold text-tertiary mb-1" style="">Thông tư 46/2018/TT-BYT</div>
+                    <p class="text-xs text-secondary" style="">Quy định về hồ sơ bệnh án điện tử.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Case Study -->
+    <section class="py-24">
+        <div class="max-w-7xl mx-auto px-8 bg-slate-900 rounded-[3rem] overflow-hidden flex flex-col md:flex-row">
+            <div class="md:w-1/2 p-12 lg:p-20 text-white">
+                <div class="text-emerald-400 font-bold mb-4 uppercase tracking-widest text-sm" style="">Hiệu quả thực tế
+                </div>
+                <h2 class="text-4xl font-extrabold mb-8" style="">Bệnh viện<div class="" style="">Hoàn Mỹ Sài Gòn</div>
+                </h2>
+                <div class="space-y-8">
+                    <div class="flex gap-4 items-center">
+                        <span class="text-5xl font-black text-emerald-500" style="">25%</span>
+                        <p class="text-slate-400" style="">Giảm thời gian chuẩn bị phòng mổ giữa các ca phẫu thuật.</p>
+                    </div>
+                    <div class="flex gap-4 items-center">
+                        <span class="text-5xl font-black text-emerald-500" style="">100%</span>
+                        <p class="text-slate-400" style="">Dữ liệu hình ảnh được lưu trữ tự động vào hệ thống HIS/PACS.
+                        </p>
+                    </div>
+                </div>
+                <p class="mt-12 text-slate-400 italic" style="">"Tegris đã thay đổi cách chúng tôi vận hành, cho phép
+                    phẫu thuật viên tập trung hoàn toàn vào bệnh nhân thay vì loay hoay với thiết bị."</p>
+            </div>
+            <div class="md:w-1/2 relative min-h-[400px]">
+                <img class="absolute inset-0 w-full h-full object-cover"
+                    data-alt="Modern facade of a world-class hospital Acibadem Maslak at twilight with clean architecture and professional lighting"
+                    src="assets/images/case-study-hospital.jpg"
+                    style="">
+            </div>
+        </div>
+    </section>
+    <!-- FAQ Section -->
+    <section class="py-24 bg-surface">
+        <div class="max-w-4xl mx-auto px-8">
+            <h2 class="text-4xl font-extrabold text-center mb-16" style="">Câu hỏi thường gặp</h2>
+            <div class="space-y-4">
+                <div class="bg-surface-container-low rounded-2xl p-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-xl" style="">
+                        <span class="" style="">Tegris có tích hợp được với các máy nội soi hiện có không?</span>
+                        <span class="material-symbols-outlined" style="">▾</span>
+                    </button>
+                    <div class="mt-4 text-secondary leading-relaxed" style="">
+                        Hoàn toàn được. Tegris là giải pháp Vendor-Neutral, hỗ trợ tất cả các chuẩn kết nối phổ biến như
+                        SDI, HDMI, DVI từ bất kỳ hãng sản xuất thiết bị nào.
+                    </div>
+                </div>
+                <div class="bg-surface-container-low rounded-2xl p-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-xl" style="">
+                        <span class="" style="">Việc truyền phát video ra ngoài phòng mổ có bảo mật không?</span>
+                        <span class="material-symbols-outlined" style="">▾</span>
+                    </button>
+                    <div class="mt-4 text-secondary leading-relaxed" style="">
+                        Tegris sử dụng các giao thức mã hóa tiên tiến và yêu cầu xác thực đa lớp để đảm bảo hình ảnh
+                        phẫu thuật chỉ được tiếp cận bởi những người có thẩm quyền.
+                    </div>
+                </div>
+                <div class="bg-surface-container-low rounded-2xl p-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-xl" style="">
+                        <span class="" style="">Tegris tích hợp với PACS/EMR như thế nào?</span>
+                        <span class="material-symbols-outlined" style="">▾</span>
+                    </button>
+                    <div class="mt-4 text-secondary leading-relaxed" style="">Xuất sang định dạng DICOM dùng lưu trữ,
+                        liên thông HIS qua HL7, và khả năng xuất dữ liệu, báo cáo ra hệ thống mạng PACS.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-[100px]"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-primary-container rounded-full blur-[100px]"></div>
+        </div>
+        <div class="max-w-4xl mx-auto px-8 text-center relative z-10">
+            <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-8 tracking-tight" style="">Sẵn sàng chuẩn hoá
+                kỷ nguyên phòng mổ&nbsp; số?</h2>
+            <p class="text-xl text-primary-fixed mb-12" style="">Hãy để chuyên gia của chúng tôi tư vấn giải pháp tối ưu
+                cho hạ tầng bệnh viện của bạn.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <button
+                    class="bg-white text-primary px-10 py-5 rounded-xl font-extrabold text-lg shadow-xl hover:bg-emerald-50 transition-colors"
+                    style="">
+                    Đăng ký tư vấn</button>
+                <button
+                    class="bg-primary-container text-white border border-primary-fixed/30 px-10 py-5 rounded-xl font-extrabold text-lg hover:bg-primary-container/80 transition-colors"
+                    style="">Đăng ký khảo sát</button>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-100 py-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-8 max-w-7xl mx-auto">
+            <div>
+                <div class="text-lg font-bold text-emerald-900 mb-4" style="">Tegris</div>
+                <p class="font-sans text-sm tracking-normal text-slate-500" style="">Curating Clinical Excellence
+                    in Surgical Integration.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-emerald-900 mb-4" style="">Liên kết</h4>
+                <ul class="space-y-2">
+                    <li class="" style=""><a
+                            class="font-sans text-sm text-slate-500 hover:text-emerald-600 underline transition-all"
+                            href="#" style="">Clinical Standards</a></li>
+                    <li class="" style=""><a
+                            class="font-sans text-sm text-slate-500 hover:text-emerald-600 underline transition-all"
+                            href="#" style="">Privacy Policy</a></li>
+                    <li class="" style=""><a
+                            class="font-sans text-sm text-slate-500 hover:text-emerald-600 underline transition-all"
+                            href="#" style="">Contact Support</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-emerald-900 mb-4" style="">Connect</h4>
+                <ul class="space-y-2">
+                    <li class="" style=""><a
+                            class="font-sans text-sm text-slate-500 hover:text-emerald-600 underline transition-all"
+                            href="#" style="">LinkedIn</a></li>
+                    <li class="" style=""><a
+                            class="font-sans text-sm text-slate-500 hover:text-emerald-600 underline transition-all"
+                            href="#" style="">Twitter</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-emerald-900 mb-4" style="">Newsletter</h4>
+                <div class="flex gap-2">
+                    <input class="bg-white border-none rounded-lg text-sm w-full focus:ring-primary" placeholder="Email"
+                        type="email">
+                    <button class="bg-primary text-white p-2 rounded-lg" style="">
+                        <span class="material-symbols-outlined text-sm" style="">➤</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-8 mt-12 pt-8 border-t border-slate-200">
+            <p class="font-sans text-sm tracking-normal text-slate-500 text-center" style="">© 2024 Tegris Surgical
+                Integration. Curating Clinical Excellence.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+
+
+
+
+
